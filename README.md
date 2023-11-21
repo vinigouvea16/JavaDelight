@@ -1,27 +1,52 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# JavaDelight (Coffee)
+Embora a escola tenha fornecido um layout pré-definido, optei por explorar minhas habilidades de front-end e desenvolver minha própria diagramação. Em busca de inspiração, explorei referências no Dribbble, inspirando-me no estilo Neo-brutalista, que curiosamente harmoniza muito bem com o alfabeto japonês (kanji). Assim, apresento a minha criação: uma loja japonesa fictícia.
 
-Currently, two official plugins are available:
+# Sobre o desafio
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Projeto criado para fixar o conteúdo passado no curso do Ignite, da Rocketseat
+Conteúdos:
+- Estados
+- ContextAPI
+- LocalStorage 
+- Imutabilidade de estado
+- Listas e chaves do ReactJS
+- Propriedades; e 
+- Componentização
 
-## Expanding the ESLint configuration
+# Funcionalidades
+- Listagem de produtos disponíveis para compra
+- Adicionar uma quantidade específicas de itens no carrinho
+- Aumentar ou remover a quantidade de itens no carrinho
+- Formulário para o usuário preencher o seu endereço
+- Exibir o total de itens no carrinho no Header
+- Exibir o valor total da soma de itens no carrinho multiplicados pelo valor
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Author
 
-- Configure the top-level `parserOptions` property like this:
+Made with 💚 by Vinicius Gouvea
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vinicius-gouvea-969008289/)
+- [@vinigouvea16](https://www.github.com/vinigouvea16)
+- [@vrgouvea](mailto:vrgouvea@gmail.com) 
+
+
+## ℹ️ How to Use
+
+Before cloning the repository into your machine you'll need: [Git](https://git-scm.com) and [NodeJS](https://nodejs.org/en/). Also it is good to have a code editor like [VSCode](https://code.visualstudio.com/).
+
+```bash
+#Clone this repository
+$ git clone https://github.com/vinigouvea16/JavaDelight JavaDelight
+
+#Go into the repository
+$ cd javadelight
+
+# Install dependencies with
+$ npm install
+
+# Run app
+$ npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
