@@ -50,7 +50,7 @@ export const SuccessContainer = styled.div`
       font-size: 1.2rem;
     }
   }
-  @media (max-width: 476px) {
+  @media (max-width: 700px) {
     height: 110%;
     img {
       transform: rotate(5deg);
@@ -104,7 +104,7 @@ export const SuccessHeroContainer = styled.div`
   @media (max-width: 1024px) {
     margin: auto 5rem;
   }
-  @media (max-width: 478px) {
+  @media (max-width: 700px) {
     /* margin: auto 1rem; */
     flex-direction: column;
     gap: 0;

@@ -1,17 +1,29 @@
 // eslint-disable-next-line
 // @ts-ignore
-import coffee from '@/public/icons/purista.png'
 import { Minus, Plus, ShoppingCartSimple } from '@phosphor-icons/react'
 import { CardContainer } from './styles'
-export function Card() {
+
+interface CardProps {
+  imageUrl: string
+  productName: string
+  productTag: string
+  cashValue: string
+}
+
+export function Card({
+  imageUrl,
+  productName,
+  productTag,
+  cashValue,
+}: CardProps) {
   return (
     <CardContainer>
-      <img src={coffee} alt="" />
-      <h2>伝統的なエスプレッソ</h2>
+      <img src={imageUrl} alt="" />
+      <h2>{productName}</h2>
       {/* <p>お湯と挽いた豆で作る伝統的なコーヒー</p> */}
-      <h5>伝統的</h5>
+      <h5>{productTag}</h5>
       <h3>
-        ¥ <span>258</span>
+        ¥ <span>{cashValue}</span>
       </h3>
       <div className="add-to-cart">
         <div className="arrows">

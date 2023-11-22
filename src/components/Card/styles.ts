@@ -26,7 +26,9 @@ export const CardContainer = styled.div`
     font-size: 0.875rem;
   }
   img {
-    margin-top: -20px;
+    /* margin-top: -20px; */
+    width: 200px;
+    height: 200px;
   }
   h3 {
     padding-bottom: 0.5rem;
@@ -96,6 +98,10 @@ export const CardContainer = styled.div`
     gap: 0;
     h2 {
       padding: 0 1rem;
+      font-size: 1rem;
+    }
+    h5 {
+      font-size: 0.875rem;
     }
     p {
       padding: 0 1rem;

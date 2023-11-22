@@ -18,13 +18,21 @@ export const HeaderContainer = styled.div`
     /* justify-content: center;
     align-items: center; */
     height: 5rem;
-    border-left: 6px solid ${(props) => props.theme.black};
+    border-width: 6px;
+    border-style: solid;
+    border-color: black;
+    border-right: none;
+    /* border-left: 6px solid ${(props) => props.theme.black}; */
     align-items: center;
+    position: relative;
+    @media (width < 500px) {
+      padding: 1rem;
+    }
   }
   .cart-div span {
-    position: relative;
-    right: -2rem;
-    top: -3rem;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.8rem;
     text-shadow: none;
     width: 1rem;
     height: 1rem;
@@ -36,18 +44,22 @@ export const HeaderContainer = styled.div`
     font-weight: bold;
     border-radius: 100%;
     background-color: ${(props) => props.theme['pastel-green']};
+    @media (width > 500px) {
+      right: 1.5rem;
+      top: 0.8rem;
+    }
   }
   .cart-div a {
     text-decoration: none;
   }
   .cart-div:hover {
-    border: 6px solid ${(props) => props.theme.black};
-    border-right: none;
+    /* border-left: 6px solid ${(props) => props.theme.black}; */
+    /* border-right: none; */
     padding: 2rem;
     display: flex;
     height: 5rem;
     align-items: center;
-    background: ${(props) => props.theme['purple-300']};
+    background: ${(props) => props.theme['purple-100']};
   }
   .cart-div svg {
     color: ${(props) => props.theme.white};
