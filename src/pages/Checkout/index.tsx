@@ -146,13 +146,23 @@ export function Checkout() {
                 </div>
               </div>
             </div>
-            <div className="total">
-              <h3>valores etc</h3>
-              <h4>entrega</h4>
-              <NavLink to="/success">
-                <button id="total">注文を確認する</button>
-              </NavLink>
+            <div className="div-total">
+              <div className="itens-total">
+                <h3>価値観</h3>
+                <p>¥ 6000</p>
+              </div>
+              <div className="entrega">
+                <h3>貨物</h3>
+                <p>¥ 70</p>
+              </div>
+              <div className="total">
+                <h2>合計</h2>
+                <h2>¥ 6070</h2>
+              </div>
             </div>
+            <NavLink to="/success">
+              <button id="total">注文を確認する</button>
+            </NavLink>
           </div>
         </CheckOutCard>
       </CheckOutHeroContainer>

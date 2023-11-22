@@ -168,16 +168,33 @@ export const CheckOutCard = styled.div`
     flex-direction: column;
     width: 100%;
   }
-  .total {
+  .div-total {
     border-top: 1px solid ${(props) => props.theme['base-button']};
   }
-  .total button {
+  #total {
     background-color: ${(props) => props.theme['yellow-300']};
     color: ${(props) => props.theme.white};
     border: none;
     padding: 1rem;
     width: 100%;
     font-size: 0.875rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 3px 4px 0px 1px rgba(0, 0, 0, 1);
+  }
+  .div-total {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  .itens-total,
+  .entrega,
+  .total {
+    display: flex;
+    justify-content: space-between;
+  }
+  .total {
+    background-color: ${(props) => props.theme['base-button']};
   }
   .arrows {
     display: flex;
@@ -208,24 +225,10 @@ export const CheckOutCard = styled.div`
     width: 20px;
     height: 20px;
   }
-  #total {
-    border-radius: 10px;
-    border: 1px solid black;
-    box-shadow: 3px 4px 0px 1px rgba(0, 0, 0, 1);
-  }
   .div-header,
   .div-body {
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
-  }
-  .div-header h3 {
-    padding-left: 1rem;
-  }
-  h2 {
-    border-bottom: 2px solid black;
-    background-color: ${(props) => props.theme['yellow-100']};
-    padding-left: 1rem;
-    /* box-shadow: -3px 4px 0px 1px rgba(0, 0, 0, 0.5); */
+    align-items: center;
   }
 `
