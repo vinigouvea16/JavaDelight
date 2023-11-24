@@ -32,13 +32,13 @@ export const CardContainer = styled.div`
   }
   h3 {
     padding-bottom: 0.5rem;
-    font-size: 0.875rem;
+    /* font-size: 0.875rem; */
   }
   h3 span {
     font-size: 1.25rem;
   }
   h5 {
-    font-size: 0.625rem;
+    font-size: 0.875rem;
     background-color: ${(props) => props.theme['base-button']};
     padding: 0.25rem;
     border-radius: 4px;
@@ -101,7 +101,7 @@ export const CardContainer = styled.div`
       font-size: 1rem;
     }
     h5 {
-      font-size: 0.875rem;
+      font-size: 0.625rem;
     }
     p {
       padding: 0 1rem;

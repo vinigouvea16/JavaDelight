@@ -1,13 +1,20 @@
-// eslint-disable-next-line
-// @ts-ignore
 import { Minus, Plus, ShoppingCartSimple } from '@phosphor-icons/react'
+import { useCart } from 'contexts/CartContext'
+import { useState } from 'react'
 import { CardContainer } from './styles'
-
+interface Product {
+  imageUrl: string
+  productName: string
+  productTag: string
+  cashValue: string
+  quantity: number
+}
 interface CardProps {
   imageUrl: string
   productName: string
   productTag: string
   cashValue: string
+  onAddToCart: (product: Product) => void
 }
 
 export function Card({
@@ -16,26 +23,53 @@ export function Card({
   productTag,
   cashValue,
 }: CardProps) {
+  const [quantity, setQuantity] = useState(1)
+  const [totalValue, setTotalValue] = useState(Number(cashValue))
+  const { addToCart } = useCart()
+
+  const handleAddToCart = () => {
+    const product = {
+      imageUrl,
+      productName,
+      productTag,
+      cashValue,
+      quantity,
+      totalValue: String(totalValue),
+    }
+    addToCart(product)
+  }
+
+  const handleIncrement = () => {
+    setQuantity(quantity + 1)
+    setTotalValue((quantity + 1) * Number(cashValue))
+  }
+
+  const handleDecrement = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1)
+      setTotalValue((quantity - 1) * Number(cashValue))
+    }
+  }
+
   return (
     <CardContainer>
       <img src={imageUrl} alt="" />
       <h2>{productName}</h2>
-      {/* <p>お湯と挽いた豆で作る伝統的なコーヒー</p> */}
       <h5>{productTag}</h5>
       <h3>
-        ¥ <span>{cashValue}</span>
+        ¥ <span>{totalValue}</span>
       </h3>
       <div className="add-to-cart">
         <div className="arrows">
-          <button>
+          <button onClick={handleDecrement}>
             <Minus size={20} color="#111" weight="light" />
           </button>
-          <span>1</span>
-          <button>
+          <span>{quantity}</span>
+          <button onClick={handleIncrement}>
             <Plus size={20} color="#111" weight="light" />
           </button>
         </div>
-        <button className="card-cart">
+        <button onClick={handleAddToCart} className="card-cart">
           <ShoppingCartSimple
             className="icon"
             size={20}

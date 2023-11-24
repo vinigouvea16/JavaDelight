@@ -60,6 +60,9 @@ export const HeaderContainer = styled.div`
     height: 5rem;
     align-items: center;
     background: ${(props) => props.theme['purple-100']};
+    @media (max-width: 515px) {
+      padding: 1rem;
+    }
   }
   .cart-div svg {
     color: ${(props) => props.theme.white};

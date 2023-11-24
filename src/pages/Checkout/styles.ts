@@ -77,24 +77,24 @@ export const CheckOutHeroContainer = styled.div`
     gap: 2rem;
     background-color: ${(props) => props.theme['base-card']};
   }
-  .payment-buttons button {
+  .payment-options button {
     padding: 1rem;
     display: flex;
-    gap: 0.75rem;
+    gap: 0.2rem;
     align-items: center;
     font-size: 0.75rem;
     width: 100%;
     background-color: ${(props) => props.theme['base-button']};
   }
-  .payment-buttons {
+  .payment-options {
     display: flex;
     gap: 2rem;
   }
   @media (max-width: 476px) {
-    .payment-buttons {
+    .payment-options {
       flex-direction: column;
     }
-    .payment-buttons button {
+    .payment-options button {
       font-size: 1rem;
     }
     .payment-div {

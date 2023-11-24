@@ -1,6 +1,5 @@
 // eslint-disable-next-line
 // @ts-ignore
-import coffee from '@/public/icons/autorais.png'
 import {
   Cardholder,
   CreditCard,
@@ -12,6 +11,8 @@ import {
   X,
 } from '@phosphor-icons/react'
 import { Footer } from 'components/Footer'
+import { useCart } from 'contexts/CartContext'
+import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import {
   CheckOutAddressCard,
@@ -19,8 +20,39 @@ import {
   CheckOutContainer,
   CheckOutHeroContainer,
 } from './styles'
-
+// import { useForm } from 'react-hook-form'
 export function Checkout() {
+  const { cart, updateCartItemQuantity, setPaymentType, removeFromCart } =
+    useCart()
+  const [totalValue, setTotalValue] = useState<number>(0)
+  const deliveryFee: number = 70
+  useEffect(() => {
+    const itemsTotal = cart.reduce(
+      (sum, product) => sum + product.quantity * Number(product.cashValue),
+      0,
+    )
+    setTotalValue(itemsTotal)
+  }, [cart])
+
+  const handleIncrement = (index: number) => {
+    const updatedCart = [...cart]
+    updatedCart[index].quantity += 1
+    updateCartItemQuantity(updatedCart)
+  }
+
+  const handleDecrement = (index: number) => {
+    if (cart[index].quantity > 1) {
+      const updatedCart = [...cart]
+      updatedCart[index].quantity -= 1
+      updateCartItemQuantity(updatedCart)
+    }
+  }
+  const handleDelete = (index: number) => {
+    removeFromCart(index)
+  }
+  const handlePaymentTypeSelect = (paymentType: string) => {
+    setPaymentType(paymentType)
+  }
   return (
     <CheckOutContainer>
       <CheckOutHeroContainer>
@@ -55,16 +87,24 @@ export function Checkout() {
                 </p>
               </div>
             </header>
-            <div className="payment-buttons">
-              <button>
+            <div className="payment-options">
+              <button
+                onClick={() =>
+                  handlePaymentTypeSelect('Debit Card / クレジット')
+                }
+              >
                 <Cardholder size={32} color="#4B2995" weight="light" />
                 クレジット
               </button>
-              <button>
+              <button
+                onClick={() =>
+                  handlePaymentTypeSelect('Credit Card / デビット')
+                }
+              >
                 <CreditCard size={32} color="#4B2995" weight="light" />
                 デビット
               </button>
-              <button>
+              <button onClick={() => handlePaymentTypeSelect('Cash / 現金')}>
                 <Money size={32} color="#4B2995" weight="light" />
                 現金
               </button>
@@ -74,90 +114,44 @@ export function Checkout() {
         <CheckOutCard>
           <h2>選択されたアイテム</h2>
           <div className="card">
-            <div className="selected-items">
-              <img src={coffee} alt="" />
-              <div className="div">
-                <div className="div-header">
-                  <h3>エスプレッソ</h3>
-                  <button id="x">
-                    <X size={20} color="#111" weight="bold" />
-                  </button>
-                </div>
-                <div className="div-body">
-                  <div className="arrows">
-                    <button id="minus">
-                      <Minus size={16} color="#111" weight="bold" />
-                    </button>
-                    <span>1</span>
-                    <button id="plus">
-                      <Plus size={16} color="#111" weight="bold" />
+            {cart.map((product, index) => (
+              <div className="selected-items" key={index}>
+                <img src={product.imageUrl} alt="" />
+                <div className="div">
+                  <div className="div-header">
+                    <h3>{product.productName}</h3>
+                    <button id="x" onClick={() => handleDelete(index)}>
+                      <X size={20} color="#111" weight="bold" />
                     </button>
                   </div>
+                  <div className="div-body">
+                    <div className="arrows">
+                      <button id="minus" onClick={() => handleDecrement(index)}>
+                        <Minus size={16} color="#111" weight="bold" />
+                      </button>
+                      <span>{product.quantity}</span>
+                      <button id="plus" onClick={() => handleIncrement(index)}>
+                        <Plus size={16} color="#111" weight="bold" />
+                      </button>
+                    </div>
 
-                  <h4>¥ 2000</h4>
-                </div>
-              </div>
-            </div>
-            <div className="selected-items">
-              <img src={coffee} alt="" />
-              <div className="div">
-                <div className="div-header">
-                  <h3>エスプレッソ</h3>
-                  <button id="x">
-                    <X size={20} color="#111" weight="bold" />
-                  </button>
-                </div>
-                <div className="div-body">
-                  <div className="arrows">
-                    <button id="minus">
-                      <Minus size={16} color="#111" weight="bold" />
-                    </button>
-                    <span>1</span>
-                    <button id="plus">
-                      <Plus size={16} color="#111" weight="bold" />
-                    </button>
+                    <h4>{product.cashValue}</h4>
                   </div>
-
-                  <h4>¥ 2000</h4>
                 </div>
               </div>
-            </div>
-            <div className="selected-items">
-              <img src={coffee} alt="" />
-              <div className="div">
-                <div className="div-header">
-                  <h3>エスプレッソ</h3>
-                  <button id="x">
-                    <X size={20} color="#111" weight="bold" />
-                  </button>
-                </div>
-                <div className="div-body">
-                  <div className="arrows">
-                    <button id="minus">
-                      <Minus size={16} color="#111" weight="bold" />
-                    </button>
-                    <span>1</span>
-                    <button id="plus">
-                      <Plus size={16} color="#111" weight="bold" />
-                    </button>
-                  </div>
-
-                  <h4>¥ 2000</h4>
-                </div>
-              </div>
-            </div>
+            ))}
             <div className="div-total">
               <div className="itens-total">
                 <h3>価値観</h3>
-                <p>¥ 6000</p>
+                <p>¥ {totalValue}</p>
               </div>
               <div className="entrega">
                 <h3>貨物</h3>
-                <p>¥ 70</p>
+                <p>¥{deliveryFee}</p>
               </div>
               <div className="total">
                 <h2>合計</h2>
-                <h2>¥ 6070</h2>
+                <h2>¥ {totalValue + deliveryFee}</h2>
               </div>
             </div>
             <NavLink to="/success">

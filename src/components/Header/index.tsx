@@ -1,7 +1,10 @@
 import { Coffee, ShoppingCartSimple } from '@phosphor-icons/react'
+import { useCart } from 'contexts/CartContext'
 import { NavLink } from 'react-router-dom'
 import { HeaderContainer } from './styles'
 export function Header() {
+  const { cart } = useCart()
+  const totalQuantity = cart.reduce((sum, product) => sum + product.quantity, 0)
   return (
     <>
       <HeaderContainer>
@@ -17,7 +20,7 @@ export function Header() {
               color="#000111"
               weight="bold"
             />
-            <span>3</span>
+            <span>{totalQuantity}</span>
           </NavLink>
         </div>
       </HeaderContainer>

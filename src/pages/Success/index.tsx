@@ -3,6 +3,7 @@
 import CheckOutImage from '@/public/catimage.jpg'
 import { Clock, CurrencyCircleDollar, MapPin } from '@phosphor-icons/react'
 import { Footer } from 'components/Footer'
+import { useCart } from 'contexts/CartContext'
 import {
   CheckOutInfo,
   SuccessCard,
@@ -11,6 +12,7 @@ import {
 } from './styles'
 
 export function Success() {
+  const { selectedPaymentType } = useCart()
   return (
     <SuccessContainer>
       <SuccessHeroContainer>
@@ -39,7 +41,9 @@ export function Success() {
               <p>
                 配達時の支払い
                 <br />
-                <span>デビット</span>
+                <span>
+                  {selectedPaymentType || 'Not Selected / 選択されていない'}
+                </span>
               </p>
             </div>
           </CheckOutInfo>
