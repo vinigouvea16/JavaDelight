@@ -13,13 +13,13 @@ export function Footer() {
         <Coffee className="icon" size={40} color="#272221" weight="fill" />
         <div className="contact-info">
           <NavLink to="#">
-            <a>接触</a>
+            <a id="contact">接触</a>
           </NavLink>
           <NavLink to="#">
-            <a>ヘルプ</a>
+            <a id="help">ヘルプ</a>
           </NavLink>
           <NavLink to="#">
-            <a>私たちについて</a>
+            <a id="about-us">私たちについて</a>
           </NavLink>
         </div>
       </div>
