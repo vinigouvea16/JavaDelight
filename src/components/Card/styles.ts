@@ -65,6 +65,9 @@ export const CardContainer = styled.div`
     justify-content: center;
     padding: 0.2rem;
     gap: 0.5rem;
+    @media (width < 500px) {
+      flex-direction: column;
+    }
     .card-cart {
       background-color: ${(props) => props.theme['purple-300']};
       padding: 0.5rem;
@@ -91,7 +94,7 @@ export const CardContainer = styled.div`
     height: 300px;
     gap: 0;
     h2 {
-      padding: 0 1rem;
+      /* padding: 0 1rem; */
       font-size: 1rem;
     }
     h5 {
