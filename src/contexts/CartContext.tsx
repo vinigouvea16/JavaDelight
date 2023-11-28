@@ -1,4 +1,10 @@
-import { ReactNode, createContext, useContext, useState } from 'react'
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
 
 interface Product {
   imageUrl: string
@@ -8,7 +14,7 @@ interface Product {
   quantity: number
 }
 
-interface CartContextProps {
+export interface CartContextProps {
   cart: Product[]
   addToCart: (product: Product) => void
   updateCartItemQuantity: (updatedCart: Product[]) => void
@@ -26,7 +32,11 @@ export const CartContext = createContext<CartContextProps | undefined>(
 )
 
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
-  const [cart, setCart] = useState<Product[]>([])
+  const [cart, setCart] = useState<Product[]>(() => {
+    const storedCart = localStorage.getItem('@javadelight:cart-state')
+    return storedCart ? JSON.parse(storedCart) : []
+  })
+
   const [selectedPaymentType, setSelectedPaymentType] = useState<string | null>(
     null,
   )
@@ -58,6 +68,11 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   const setPaymentType = (paymentType: string) => {
     setSelectedPaymentType(paymentType)
   }
+
+  useEffect(() => {
+    const stateJSON = JSON.stringify(cart)
+    localStorage.setItem('@javadelight:cart-state', stateJSON)
+  }, [cart])
 
   return (
     <CartContext.Provider
