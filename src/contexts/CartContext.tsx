@@ -14,7 +14,7 @@ interface Product {
   quantity: number
 }
 
-export interface CartContextProps {
+interface CartContextProps {
   cart: Product[]
   addToCart: (product: Product) => void
   updateCartItemQuantity: (updatedCart: Product[]) => void
@@ -90,6 +90,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   )
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useCart = (): CartContextProps => {
   const context = useContext(CartContext)
   if (!context) {

@@ -4,6 +4,7 @@ import CheckOutImage from '@/public/catimage.jpg'
 import { Clock, CurrencyCircleDollar, MapPin } from '@phosphor-icons/react'
 import { Footer } from 'components/Footer'
 import { useCart } from 'contexts/CartContext'
+import { useEffect, useState } from 'react'
 import {
   CheckOutInfo,
   SuccessCard,
@@ -13,6 +14,22 @@ import {
 
 export function Success() {
   const { selectedPaymentType } = useCart()
+  const [addressInfo, setAddressInfo] = useState({
+    address: '',
+    number: '',
+    complemento: '',
+    UF: '',
+    bairro: '',
+    cidade: '',
+  })
+  useEffect(() => {
+    // Retrieve address information from localStorage
+    const storedAddressInfo = localStorage.getItem('@javadelight:addressInfo')
+    if (storedAddressInfo) {
+      setAddressInfo(JSON.parse(storedAddressInfo))
+    }
+  }, [])
+  useEffect(() => {}, [addressInfo])
   return (
     <SuccessContainer>
       <SuccessHeroContainer>
@@ -23,9 +40,14 @@ export function Success() {
             <div className="address-info">
               <MapPin size={48} color="#a78bfa" weight="fill" />
               <p>
-                へ配達する：<span> Rua João Daniel Martinelli, 102</span>
+                へ配達する：
+                <span>
+                  {addressInfo.address}, {addressInfo.number}
+                </span>
                 <br />
-                <p>farrapos - porto alegre</p>
+                <p>
+                  {addressInfo.cidade} - {addressInfo.UF}
+                </p>
               </p>
             </div>
             <div className="delivery-time">

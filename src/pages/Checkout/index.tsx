@@ -13,15 +13,26 @@ import {
 import { Footer } from 'components/Footer'
 import { useCart } from 'contexts/CartContext'
 import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { NavLink, useNavigate } from 'react-router-dom'
+
 import {
   CheckOutAddressCard,
   CheckOutCard,
   CheckOutContainer,
   CheckOutHeroContainer,
 } from './styles'
-// import { useForm } from 'react-hook-form'
+interface FormData {
+  CEP: string
+  address: string
+  number: string
+  complemento: string
+  UF: string
+  bairro: string
+  cidade: string
+}
 export function Checkout() {
+  const navigate = useNavigate()
   const { cart, updateCartItemQuantity, setPaymentType, removeFromCart } =
     useCart()
   const [totalValue, setTotalValue] = useState<number>(0)
@@ -53,12 +64,65 @@ export function Checkout() {
   const handlePaymentTypeSelect = (paymentType: string) => {
     setPaymentType(paymentType)
   }
+  const { register, handleSubmit, setValue, watch } = useForm<FormData>()
+
+  const cep = watch('CEP')
+
+  const fetchAddressInfo = async () => {
+    try {
+      const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
+      const data = await response.json()
+
+      console.log('Fetched address data:', data)
+      setValue('CEP', data.cep || '')
+      setValue('address', data.logradouro || '')
+      setValue('number', data.numero || '')
+      setValue('complemento', '')
+      setValue('UF', data.uf || '')
+      setValue('bairro', data.bairro || '')
+      setValue('cidade', data.localidade || '')
+      console.log('form State after setvalue:', watch())
+
+      const addressData = {
+        address: data.logradouro || '',
+        number: data.numero || '',
+        complemento: '',
+        UF: data.uf || '',
+        bairro: data.bairro || '',
+        cidade: data.localidade || '',
+      }
+
+      localStorage.setItem(
+        '@javadelight:addressInfo',
+        JSON.stringify(addressData),
+      )
+    } catch (error) {
+      console.error('Error fetching address information:', error)
+    }
+  }
+  const onSubmit: SubmitHandler<FormData> = (data) => {
+    console.log(data)
+    localStorage.setItem('@javadelight:addressInfo', JSON.stringify(data))
+    navigate('/success')
+  }
+  useEffect(() => {
+    const storedAddressInfo = localStorage.getItem('@javadelight:addressInfo')
+    if (storedAddressInfo) {
+      const addressData = JSON.parse(storedAddressInfo)
+      setValue('address', addressData.address || '')
+      setValue('number', addressData.number || '')
+      setValue('complemento', addressData.complemento || '')
+      setValue('UF', addressData.UF || '')
+      setValue('bairro', addressData.bairro || '')
+      setValue('cidade', addressData.cidade || '')
+    }
+  }, [setValue])
   return (
     <CheckOutContainer>
       <CheckOutHeroContainer>
         <CheckOutAddressCard>
           <h1>注文を完了します</h1>
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <header>
               <MapPin size={38} color="#4B2995" weight="fill" />
               <div className="header-card-text">
@@ -66,14 +130,47 @@ export function Checkout() {
                 <p>注文品を受け取りたい住所を入力してください</p>
               </div>
             </header>
-            <input type="text" name="CEP" id="CEP" placeholder="〒" />
-            <input type="text" name="address" id="address" placeholder="住所" />
+            <input
+              type="text"
+              {...register('CEP')}
+              placeholder="〒/CEP"
+              onKeyDown={(e) => {
+                if (e.key === 'Tab') {
+                  fetchAddressInfo()
+                }
+              }}
+            />
+            <input
+              type="text"
+              {...register('address')}
+              placeholder="住所/Endereço"
+            />
             <div className="input-div">
-              <input type="text" id="number" placeholder="番地" />
-              <input type="text" id="complemento" placeholder=" 補足住所 " />
-              <input type="text" id="UF" placeholder="都道府県" />
-              <input type="text" id="bairro" placeholder="区" />
-              <input type="text" id="cidade" placeholder="市" />
+              <input
+                type="text"
+                {...register('number')}
+                placeholder="番地/número"
+              />
+              <input
+                type="text"
+                {...register('complemento')}
+                placeholder=" 補足住所/complemento"
+              />
+              <input
+                type="text"
+                {...register('UF')}
+                placeholder="都道府県/UF"
+              />
+              <input
+                type="text"
+                {...register('bairro')}
+                placeholder="区/Bairro"
+              />
+              <input
+                type="text"
+                {...register('cidade')}
+                placeholder="市/Cidade"
+              />
             </div>
           </form>
 
@@ -155,7 +252,9 @@ export function Checkout() {
               </div>
             </div>
             <NavLink to="/success">
-              <button id="total">注文を確認する</button>
+              <button id="total" type="button" onClick={handleSubmit(onSubmit)}>
+                注文を確認する
+              </button>
             </NavLink>
           </div>
         </CheckOutCard>
