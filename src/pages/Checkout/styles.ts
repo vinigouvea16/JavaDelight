@@ -58,12 +58,16 @@ export const CheckOutHeroContainer = styled.div`
     box-shadow: 1px 1px 0px 2px rgba(0, 0, 0, 1);
     height: 2.5rem;
   }
-  .input-div {
+  form .input-div {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     @media (max-width: 800px) {
       grid-template-columns: 1fr;
+    }
+    @media (max-width: 500px) {
+      display: flex;
+      flex-direction: column;
     }
   }
   .payment-div {
@@ -124,6 +128,7 @@ export const CheckOutAddressCard = styled.div`
   }
   @media (max-width: 500px) {
     padding: 0rem;
+    width: 100%;
   }
 
   h1 {
