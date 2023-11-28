@@ -15,14 +15,11 @@ export const HeaderContainer = styled.div`
   .cart-div {
     padding: 2rem;
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
     height: 5rem;
     border-width: 6px;
     border-style: solid;
     border-color: black;
     border-right: none;
-    /* border-left: 6px solid ${(props) => props.theme.black}; */
     align-items: center;
     position: relative;
     @media (width < 500px) {
@@ -53,8 +50,6 @@ export const HeaderContainer = styled.div`
     text-decoration: none;
   }
   .cart-div:hover {
-    /* border-left: 6px solid ${(props) => props.theme.black}; */
-    /* border-right: none; */
     padding: 2rem;
     display: flex;
     height: 5rem;
@@ -76,14 +71,12 @@ export const HeaderContainer = styled.div`
     padding: 0 0 0 5rem;
     .cart-div {
       height: 5rem;
-      /* padding: 0 1rem 0 0; */
     }
     h1 {
       font-size: 1.5rem;
     }
     .icon {
       font-size: 2rem;
-      /* padding: 0 5rem; */
     }
   }
   @media (max-width: 515px) {

@@ -1,9 +1,7 @@
 import styled from 'styled-components'
 
 export const CheckOutContainer = styled.div`
-  /* border: 6px solid ${(props) => props.theme.black}; */
   width: 100%;
-  /* height: 100vh; */
   top: 73px;
 
   position: absolute;
@@ -31,7 +29,6 @@ export const CheckOutHeroContainer = styled.div`
   }
   @media (max-width: 800px) {
     margin-bottom: 3rem;
-    /* height: 150%; */
     flex-direction: column;
   }
   @media (max-width: 500px) {
@@ -52,7 +49,6 @@ export const CheckOutHeroContainer = styled.div`
     border: 2px solid black;
     border-top: 0px solid black;
     box-shadow: 3px 4px 0px 1px rgba(0, 0, 0, 1);
-    /* border-radius: 8px; */
     @media (max-width: 476px) {
       padding: 1rem;
     }
@@ -116,7 +112,6 @@ export const CheckOutHeroContainer = styled.div`
 
 export const CheckOutAddressCard = styled.div`
   padding: 2.5rem;
-  /* gap: 2rem; */
   display: flex;
   flex-direction: column;
   .header-card-text {
@@ -135,13 +130,11 @@ export const CheckOutAddressCard = styled.div`
     border: 2px solid black;
     background-color: ${(props) => props.theme['yellow-100']};
     box-shadow: 3px 4px 0px 1px rgba(0, 0, 0, 1);
-    /* background-color: ${(props) => props.theme['yellow-100']}; */
   }
   @media (max-width: 500px) {
     .input-div {
       display: grid;
       grid-template-columns: auto;
-      /* grid-auto-rows: 1fr 1fr 1fr; */
       gap: 16px 1em;
       grid-template-areas:
         'number complemento UF'
@@ -190,7 +183,6 @@ export const CheckOutCard = styled.div`
   .selected-items {
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
     border-bottom: 1px solid ${(props) => props.theme['base-button']};
   }
   .selected-items img {
@@ -207,9 +199,6 @@ export const CheckOutCard = styled.div`
     flex-direction: column;
     width: 100%;
   }
-  /* .div-total {
-    border-top: 1px solid ${(props) => props.theme['base-button']};
-  } */
   #total {
     background-color: ${(props) => props.theme['yellow-300']};
     color: ${(props) => props.theme.white};
@@ -232,9 +221,6 @@ export const CheckOutCard = styled.div`
     display: flex;
     justify-content: space-between;
   }
-  /* .total {
-    background-color: ${(props) => props.theme['base-button']};
-  } */
   .arrows {
     display: flex;
     align-items: center;

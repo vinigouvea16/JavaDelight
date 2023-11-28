@@ -4,7 +4,7 @@ import backgroundImage from '@/public/home.jpg'
 import styled from 'styled-components'
 export const HomeContainer = styled.div`
   position: relative;
-  height: 100vh; /* Use 100vh for full viewport height */
+  height: 100vh;
   overflow: hidden;
 `
 
@@ -77,7 +77,6 @@ export const HomeTextContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* right: 50%; */
     p {
       font-size: 1.5rem;
     }

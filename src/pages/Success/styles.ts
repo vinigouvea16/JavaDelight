@@ -2,17 +2,14 @@ import styled from 'styled-components'
 
 export const SuccessContainer = styled.div`
   border: 6px solid ${(props) => props.theme.black};
-  /* width: 100%; */
   height: 100%;
   margin: 0 auto;
-  /* position: absolute; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: ${(props) => props.theme['purple-100']};
   h1 {
-    /* color: ${(props) => props.theme.black}; */
     color: ${(props) => props.theme['pastel-green']};
     font-size: 2.5rem;
     font-weight: 700;
@@ -61,12 +58,7 @@ export const SuccessContainer = styled.div`
 export const SuccessCard = styled.div`
   display: flex;
   flex-direction: column;
-  /* h1,
-  h2 {
-    border-bottom: 2px solid ${(props) => props.theme.black};
-  } */
   height: 450px;
-  /* box-shadow: 6px 6px 0px 3px rgba(32, 201, 130, 0.64); */
 `
 
 export const CheckOutInfo = styled.div`
@@ -85,7 +77,6 @@ export const CheckOutInfo = styled.div`
     display: flex;
     gap: 1rem;
   }
-  /* height: 100%; */
   border: 2px solid ${(props) => props.theme.black};
   @media (max-width: 800px) {
     padding: 1rem;
@@ -105,7 +96,6 @@ export const SuccessHeroContainer = styled.div`
     margin: auto 5rem;
   }
   @media (max-width: 700px) {
-    /* margin: auto 1rem; */
     flex-direction: column;
     gap: 0;
   }

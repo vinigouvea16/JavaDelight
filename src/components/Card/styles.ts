@@ -11,12 +11,8 @@ export const CardContainer = styled.div`
   box-shadow: 5px 5px 0px 2px rgba(0, 0, 0, 1);
   background-color: ${(props) => props.theme['pastel-green']};
   border-radius: 0px;
-  /* transform: scale(1);
-  transition: 200ms cubic-bezier(0.11, -0.25, 0.7, 1.22);
-  transform-origin: bottom right; */
   &:hover {
     border-radius: 10px;
-    /* scale: 1.03; */
   }
   h2 {
     font-size: 1.25rem;
@@ -26,13 +22,11 @@ export const CardContainer = styled.div`
     font-size: 0.875rem;
   }
   img {
-    /* margin-top: -20px; */
     width: 200px;
     height: 200px;
   }
   h3 {
     padding-bottom: 0.5rem;
-    /* font-size: 0.875rem; */
   }
   h3 span {
     font-size: 1.25rem;
