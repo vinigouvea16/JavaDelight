@@ -1,6 +1,6 @@
 import { Minus, Plus, ShoppingCartSimple } from '@phosphor-icons/react'
-import { useCart } from 'contexts/CartContext'
 import { useState } from 'react'
+import { useCart } from '../../hooks/cartHooks'
 import { CardContainer } from './styles'
 interface Product {
   imageUrl: string

@@ -1,10 +1,4 @@
-import {
-  ReactNode,
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from 'react'
+import { ReactNode, createContext, useEffect, useState } from 'react'
 
 interface Product {
   imageUrl: string
@@ -14,7 +8,7 @@ interface Product {
   quantity: number
 }
 
-interface CartContextProps {
+export interface CartContextProps {
   cart: Product[]
   addToCart: (product: Product) => void
   updateCartItemQuantity: (updatedCart: Product[]) => void
@@ -88,13 +82,4 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       {children}
     </CartContext.Provider>
   )
-}
-
-// eslint-disable-next-line react-refresh/only-export-components
-export const useCart = (): CartContextProps => {
-  const context = useContext(CartContext)
-  if (!context) {
-    throw new Error('useCart must be used within a CartProvider')
-  }
-  return context
 }

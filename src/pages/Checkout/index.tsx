@@ -11,11 +11,11 @@ import {
   X,
 } from '@phosphor-icons/react'
 import { Footer } from 'components/Footer'
-import { useCart } from 'contexts/CartContext'
 import { useEffect, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { NavLink, useNavigate } from 'react-router-dom'
 
+import { useCart } from 'hooks/cartHooks'
 import {
   CheckOutAddressCard,
   CheckOutCard,
@@ -81,7 +81,6 @@ export function Checkout() {
       setValue('UF', data.uf || '')
       setValue('bairro', data.bairro || '')
       setValue('cidade', data.localidade || '')
-      console.log('form State after setvalue:', watch())
 
       const addressData = {
         address: data.logradouro || '',

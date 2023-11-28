@@ -33,7 +33,7 @@ import shop from '@/public/icons/shop.png'
 import sobremesas from '@/public/icons/sobremesa.png'
 import { Card } from 'components/Card'
 import { Footer } from 'components/Footer'
-import { useCart } from 'contexts/CartContext'
+import { useCart } from 'hooks/cartHooks'
 import { MenuContainer, MenuGridContainer } from './styles'
 interface Product {
   imageUrl: string

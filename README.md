@@ -1,6 +1,6 @@
 
 # JavaDelight (Coffee)
-Embora a escola tenha fornecido um layout pré-definido, optei por explorar minhas habilidades de front-end e desenvolver minha própria diagramação. Em busca de inspiração, explorei referências no Dribbble, inspirando-me no estilo Neo-brutalista, que curiosamente harmoniza muito bem com o alfabeto japonês (kanji). Assim, apresento a minha criação: uma loja japonesa fictícia.
+Embora a escola tenha fornecido um layout pré-definido, optei por explorar minhas habilidades de front-end e desenvolver minha própria diagramação. Em busca de inspiração, explorei referências no Dribbble, inspirando-me no estilo Neo-brutalista, que curiosamente harmoniza muito bem com o alfabeto japonês (kanji). Assim, apresento a minha criação: Javadelight - uma loja japonesa fictícia de cafés.
 
 # Sobre o desafio
 
@@ -24,7 +24,7 @@ Conteúdos:
 
 ## Author
 
-Made with 💚 by Vinicius Gouvea
+Feito com 💚 por Vinicius Gouvea
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vinicius-gouvea-969008289/)
 - [@vinigouvea16](https://www.github.com/vinigouvea16)

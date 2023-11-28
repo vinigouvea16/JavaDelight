@@ -3,7 +3,7 @@
 import CheckOutImage from '@/public/catimage.jpg'
 import { Clock, CurrencyCircleDollar, MapPin } from '@phosphor-icons/react'
 import { Footer } from 'components/Footer'
-import { useCart } from 'contexts/CartContext'
+import { useCart } from 'hooks/cartHooks'
 import { useEffect, useState } from 'react'
 import {
   CheckOutInfo,
@@ -23,7 +23,6 @@ export function Success() {
     cidade: '',
   })
   useEffect(() => {
-    // Retrieve address information from localStorage
     const storedAddressInfo = localStorage.getItem('@javadelight:addressInfo')
     if (storedAddressInfo) {
       setAddressInfo(JSON.parse(storedAddressInfo))

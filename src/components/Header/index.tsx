@@ -1,5 +1,5 @@
 import { Coffee, ShoppingCartSimple } from '@phosphor-icons/react'
-import { useCart } from 'contexts/CartContext'
+import { useCart } from 'hooks/cartHooks'
 import { NavLink } from 'react-router-dom'
 import { HeaderContainer } from './styles'
 export function Header() {
