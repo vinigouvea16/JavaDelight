@@ -1,3 +1,7 @@
+## Preview
+
+![App Screenshot](/public/assets/Screenshot%202023-11-28%20183305.png)
+
 
 # JavaDelight (Coffee)
 Embora a escola tenha fornecido um layout pré-definido, optei por explorar minhas habilidades de front-end e desenvolver minha própria diagramação. Em busca de inspiração, explorei referências no Dribbble, inspirando-me no estilo Neo-brutalista, que curiosamente harmoniza muito bem com o alfabeto japonês (kanji). Assim, apresento a minha criação: Javadelight - uma loja japonesa fictícia de cafés.
