@@ -25,14 +25,14 @@ export function Footer() {
       </div>
       <div className="socials">
         <NavLink to="http://instagram.com">
-          <InstagramLogo size={40} color="#000111" weight="fill" />
+          <InstagramLogo size={40} color="#272221" weight="fill" />
         </NavLink>
         <NavLink to="http://linkedin.com">
-          <LinkedinLogo size={40} color="#000111" weight="fill" />
+          <LinkedinLogo size={40} color="#272221" weight="fill" />
         </NavLink>
 
         <NavLink to="http://twitter.com">
-          <TwitterLogo size={40} color="#000111" weight="fill" />
+          <TwitterLogo size={40} color="#272221" weight="fill" />
         </NavLink>
       </div>
     </FooterContainer>
