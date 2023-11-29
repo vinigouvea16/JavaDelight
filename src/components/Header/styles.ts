@@ -40,8 +40,8 @@ export const HeaderContainer = styled.div`
     font-weight: bold;
     border-radius: 100%;
     color: ${(props) => props.theme.white};
-    background-color: ${(props) => props.theme['purple-300']};
-    /* background-color: ${(props) => props.theme['red-500']}; */
+    /* background-color: ${(props) => props.theme['purple-300']}; */
+    background-color: ${(props) => props.theme['red-500']};
     @media (width > 500px) {
       right: 1.5rem;
       top: 0.8rem;
