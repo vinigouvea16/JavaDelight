@@ -1,8 +1,8 @@
 import {
   Coffee,
-  InstagramLogo,
+  GithubLogo,
   LinkedinLogo,
-  TwitterLogo,
+  MicrosoftOutlookLogo,
 } from '@phosphor-icons/react'
 import { NavLink } from 'react-router-dom'
 import { FooterContainer } from './styles'
@@ -24,15 +24,14 @@ export function Footer() {
         </div>
       </div>
       <div className="socials">
-        <NavLink to="http://instagram.com">
-          <InstagramLogo size={40} color="#272221" weight="fill" />
-        </NavLink>
+        <a href="mailto:vrgouvea@outlook.com">
+          <MicrosoftOutlookLogo size={40} color="#272221" weight="fill" />
+        </a>
         <NavLink to="https://www.linkedin.com/in/vinicius-gouvea-969008289/">
           <LinkedinLogo size={40} color="#272221" weight="fill" />
         </NavLink>
-
-        <NavLink to="http://twitter.com">
-          <TwitterLogo size={40} color="#272221" weight="fill" />
+        <NavLink to="https://github.com/vinigouvea16">
+          <GithubLogo size={40} color="#272221" weight="fill" />
         </NavLink>
       </div>
     </FooterContainer>
