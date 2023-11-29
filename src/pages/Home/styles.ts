@@ -64,7 +64,7 @@ export const HomeTextContainer = styled.div`
   }
   p:hover {
     border-radius: 10px;
-    background: ${(props) => props.theme['pastel-green']};
+    /* background: ${(props) => props.theme['pastel-green']}; */
   }
   @media (max-width: 1024px) {
     p {

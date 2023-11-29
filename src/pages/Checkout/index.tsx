@@ -133,11 +133,7 @@ export function Checkout() {
               type="text"
               {...register('CEP')}
               placeholder="〒/CEP"
-              onKeyDown={(e) => {
-                if (e.key === 'Tab') {
-                  fetchAddressInfo()
-                }
-              }}
+              onBlur={fetchAddressInfo}
             />
             <input
               type="text"

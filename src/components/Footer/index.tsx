@@ -12,7 +12,7 @@ export function Footer() {
       <div className="footer">
         <Coffee className="icon" size={40} color="#272221" weight="fill" />
         <div className="contact-info">
-          <NavLink to="#">
+          <NavLink to="https://www.linkedin.com/in/vinicius-gouvea-969008289/">
             <a id="contact">接触</a>
           </NavLink>
           <NavLink to="#">
@@ -27,7 +27,7 @@ export function Footer() {
         <NavLink to="http://instagram.com">
           <InstagramLogo size={40} color="#272221" weight="fill" />
         </NavLink>
-        <NavLink to="http://linkedin.com">
+        <NavLink to="https://www.linkedin.com/in/vinicius-gouvea-969008289/">
           <LinkedinLogo size={40} color="#272221" weight="fill" />
         </NavLink>
 

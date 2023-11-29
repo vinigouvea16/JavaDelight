@@ -26,4 +26,6 @@ export const defaultTheme = {
   'pastel-300': '#86efac',
   'pastel-400': '#4ade80',
   'pastel-500': '#22c55e',
+
+  'red-500': '#ff0000',
 }

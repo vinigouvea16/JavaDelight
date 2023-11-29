@@ -9,10 +9,12 @@ export const CardContainer = styled.div`
   gap: 0.25rem;
   align-items: center;
   box-shadow: 5px 5px 0px 2px rgba(0, 0, 0, 1);
-  background-color: ${(props) => props.theme['pastel-green']};
+  /* background-color: ${(props) => props.theme['pastel-green']}; */
+  background-color: ${(props) => props.theme.white};
   border-radius: 0px;
   &:hover {
     border-radius: 10px;
+    background-color: ${(props) => props.theme['pastel-green']};
   }
   h2 {
     font-size: 1.25rem;

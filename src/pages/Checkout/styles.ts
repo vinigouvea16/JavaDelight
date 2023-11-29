@@ -57,6 +57,7 @@ export const CheckOutHeroContainer = styled.div`
     border: none;
     box-shadow: 1px 1px 0px 2px rgba(0, 0, 0, 1);
     height: 2.5rem;
+    padding: 1rem;
   }
   form .input-div {
     display: grid;
@@ -80,7 +81,7 @@ export const CheckOutHeroContainer = styled.div`
   .payment-options button {
     padding: 1rem;
     display: flex;
-    gap: 0.2rem;
+    gap: 1rem;
     align-items: center;
     font-size: 0.75rem;
     width: 100%;
@@ -96,6 +97,7 @@ export const CheckOutHeroContainer = styled.div`
     }
     .payment-options button {
       font-size: 1rem;
+      gap: 1.5rem;
     }
     .payment-div {
       padding: 1rem;

@@ -11,7 +11,6 @@ export const HeaderContainer = styled.div`
   padding: 0 0 0 10rem;
   background: ${(props) => props.theme.background};
   border: 6px solid ${(props) => props.theme.black};
-  text-shadow: 1px 4px 2px rgba(0, 0, 0, 0.5);
   .cart-div {
     padding: 2rem;
     display: flex;
@@ -40,7 +39,9 @@ export const HeaderContainer = styled.div`
     font-size: 0.75rem;
     font-weight: bold;
     border-radius: 100%;
-    background-color: ${(props) => props.theme['pastel-green']};
+    color: ${(props) => props.theme.white};
+    background-color: ${(props) => props.theme['purple-300']};
+    /* background-color: ${(props) => props.theme['red-500']}; */
     @media (width > 500px) {
       right: 1.5rem;
       top: 0.8rem;
@@ -54,7 +55,7 @@ export const HeaderContainer = styled.div`
     display: flex;
     height: 5rem;
     align-items: center;
-    background: ${(props) => props.theme['purple-100']};
+    background: ${(props) => props.theme['pastel-green']};
     @media (max-width: 515px) {
       padding: 1rem;
     }

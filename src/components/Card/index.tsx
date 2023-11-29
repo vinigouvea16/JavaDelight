@@ -23,7 +23,7 @@ export function Card({
   productTag,
   cashValue,
 }: CardProps) {
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(0)
   const [totalValue, setTotalValue] = useState(Number(cashValue))
   const { addToCart } = useCart()
 
@@ -37,6 +37,7 @@ export function Card({
       totalValue: String(totalValue),
     }
     addToCart(product)
+    setQuantity(0)
   }
 
   const handleIncrement = () => {
