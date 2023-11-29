@@ -59,6 +59,7 @@ export const CardContainer = styled.div`
       background: none;
       border: none;
       height: 20px;
+      cursor: pointer;
     }
   }
   .add-to-cart {
@@ -75,6 +76,7 @@ export const CardContainer = styled.div`
       padding: 0.5rem;
       box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, 1);
       border-radius: 3px;
+      cursor: pointer;
     }
     .card-cart:hover {
       opacity: 0.9;

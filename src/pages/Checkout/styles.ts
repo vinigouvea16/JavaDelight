@@ -86,6 +86,7 @@ export const CheckOutHeroContainer = styled.div`
     font-size: 0.75rem;
     width: 100%;
     background-color: ${(props) => props.theme['base-button']};
+    cursor: pointer;
   }
   .payment-options {
     display: flex;
