@@ -9,7 +9,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   height: 5rem;
   padding: 0 0 0 10rem;
-  background: ${(props) => props.theme.background};
+  background: ${(props) => props.theme['base-input']};
   border: 6px solid ${(props) => props.theme.black};
   .cart-div {
     padding: 2rem;

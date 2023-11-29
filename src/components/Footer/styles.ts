@@ -10,7 +10,7 @@ export const FooterContainer = styled.div`
   align-items: center;
   height: 5rem;
   padding: 0 0 0 10rem;
-  background: ${(props) => props.theme.background};
+  background: ${(props) => props.theme['base-input']};
   border-top: 6px solid ${(props) => props.theme.black};
   border-bottom: 6px solid ${(props) => props.theme.black};
   text-shadow: 1px 4px 4px rgba(0, 0, 0, 0.5);
