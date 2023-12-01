@@ -1,6 +1,7 @@
 ## Preview
 
-![App Screenshot](/public/assets/Screenshot%202023-11-28%20183305.png)
+<!-- ![App Screenshot](/public/assets/Screenshot%202023-11-28%20183305.png) -->
+![App Mockup](/public/assets/screenshot.jpg)
 
 
 # JavaDelight (Coffee)
