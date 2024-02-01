@@ -7,8 +7,10 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 :root{
-  /* scrollbar-gutter: stable; */
+  scrollbar-width: thin;
+  scrollbar-color: #F1E9C9 #000;
 }
+
 :focus{
   outline: 0;
   box-shadow: 0 0 0 2px ${(props) => props.theme['base-text']};
@@ -27,6 +29,7 @@ body, input, textarea, button{
 }
 /* scroll-bar */
 body {
+  
   --sb-track-color: #000000;
   --sb-thumb-color: #9efcb4;
   --sb-size: 8px;
@@ -34,19 +37,4 @@ body {
   scrollbar-color: var(--sb-thumb-color) 
                    var(--sb-track-color);
 }
-
-body::-webkit-scrollbar {
-  width: var(--sb-size) 
-}
-
-body::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
-  border-radius: 8px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  border-radius: 8px;
-  border: 2px solid #131415;
-  }
 `

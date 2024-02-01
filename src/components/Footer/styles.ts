@@ -14,6 +14,12 @@ export const FooterContainer = styled.div`
   border-top: 6px solid ${(props) => props.theme.black};
   border-bottom: 6px solid ${(props) => props.theme.black};
   text-shadow: 1px 4px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  @media (width > 1440px) {
+    /* position: absolute; */
+  }
+  @media (max-width: 960px) {
+  }
   .footer {
     display: flex;
     align-items: center;

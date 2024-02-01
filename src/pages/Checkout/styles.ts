@@ -8,10 +8,8 @@ export const CheckOutContainer = styled.div`
   background-color: ${(props) => props.theme['pastel-green']};
   overflow: hidden;
   @media (min-width: 960px) {
-    height: 100vh;
+    /* height: 95vh; */
     width: 100%;
-  }
-  @media (max-width: 960px) {
   }
   h1 {
     color: ${(props) => props.theme.black};
@@ -27,7 +25,7 @@ export const CheckOutHeroContainer = styled.div`
   @media (max-width: 1024px) {
     margin: 1rem;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 1120px) {
     margin-bottom: 3rem;
     flex-direction: column;
   }

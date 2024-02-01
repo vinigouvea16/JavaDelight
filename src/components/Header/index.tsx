@@ -5,7 +5,10 @@ import { HeaderContainer } from './styles'
 
 export function Header() {
   const { cart } = useCart()
-  const totalQuantity = cart.reduce((sum, product) => sum + product.quantity, 0)
+  const totalQuantity = Math.min(
+    99,
+    cart.reduce((sum, product) => sum + product.quantity, 0),
+  )
 
   return (
     <HeaderContainer>

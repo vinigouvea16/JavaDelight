@@ -6,6 +6,10 @@ export const MenuContainer = styled.div`
   top: 73px;
   position: absolute;
   background-color: ${(props) => props.theme['yellow-100']};
+  @media (width > 1440px) {
+    /* height: 95vh; */
+    width: 100%;
+  }
   h1 {
     position: relative;
     color: ${(props) => props.theme.black};
